@@ -6,6 +6,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.parceler.Parcel;
 
 public class Movie {
 
@@ -13,6 +14,12 @@ public class Movie {
     String title;
     String overview;
     String backdropPath;
+    Double voteAverage;
+
+
+    public Double getVoteAverage() {
+        return voteAverage;
+    }
 
     public Movie(JSONObject jsonObject) throws JSONException {
 
@@ -20,6 +27,7 @@ public class Movie {
         title = jsonObject.getString("title");
         overview = jsonObject.getString("overview");
         backdropPath = jsonObject.getString("backdrop_path");
+        voteAverage = jsonObject.getDouble("vote_average");
 
     }
 
