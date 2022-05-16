@@ -90,7 +90,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
             }
             // else imageUrl = posterimage
             // Corner radius, high value = more rounded
-            int radius = 30;
+            int radius = 70;
             // Crop margin, set to 0 for corners with no crop
             int margin = 0;
             Glide.with(context)
