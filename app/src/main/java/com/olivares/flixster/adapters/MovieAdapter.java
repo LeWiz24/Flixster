@@ -75,16 +75,22 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
             tvTitle.setText(movie.getTitle());
             tvOverview.setText(movie.getOverview());
             String imageUrl;
+            int placeholderImg;
             // if phone is in landscape
             if(context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
                 // then imageUrl = backdropimage
                 imageUrl = movie.getBackdropPath();
+                placeholderImg = R.drawable.flicks_backdrop_placeholder;
             } else {
                 // else imageUrl = posterimage
                 imageUrl = movie.getPosterPath();
+                placeholderImg = R.drawable.flicks_movie_placeholder;
             }
             // else imageUrl = posterimage
-            Glide.with(context).load(imageUrl).into(ivPoster);
+            Glide.with(context)
+                    .load(imageUrl)
+                    .placeholder(placeholderImg)
+                    .into(ivPoster);
         }
         // Method requirement for implementing onClickListener
         // When the user clicks on a row, show MovieDetailsActivity for the selected movie

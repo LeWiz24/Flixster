@@ -8,8 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 import org.parceler.Parcel;
 
+@Parcel
 public class Movie {
 
+    // Empty constructor required for Parceler
+    public Movie() {}
     String posterPath;
     String title;
     String overview;
