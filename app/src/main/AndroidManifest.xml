@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Flixster">
         <activity
+            android:name=".MovieTrailerActivity"
+            android:exported="false" />
+        <activity
             android:name=".DescriptionActivity"
             android:exported="false" />
         <activity

@@ -6,10 +6,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.olivares.flixster.adapters.MovieAdapter;
+import com.olivares.flixster.databinding.ActivityMainBinding;
 import com.olivares.flixster.models.Movie;
 
 import org.json.JSONArray;
@@ -28,11 +30,16 @@ public class MainActivity extends AppCompatActivity {
     // Creating tag to our MainActivity, helps to log data
     public static final String TAG = "MainActivity";
     List<Movie> movies;
+    ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
+
+
         RecyclerView rvMovies = findViewById(R.id.rvMovies);
         movies = new ArrayList<>();
 
@@ -79,4 +86,5 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
 }
