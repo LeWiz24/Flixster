@@ -15,6 +15,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.olivares.flixster.databinding.ActivityMainBinding;
 import com.olivares.flixster.models.Movie;
 
 public class DescriptionActivity extends AppCompatActivity {
@@ -24,10 +25,10 @@ public class DescriptionActivity extends AppCompatActivity {
     TextView tvOverview;
     RatingBar rbVoteAverage;
     ImageView ivBackdrop;
-
     Button btPlay;
-
     String id;
+
+    ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +49,8 @@ public class DescriptionActivity extends AppCompatActivity {
         movie = (Movie) Parcels.unwrap(getIntent().getParcelableExtra(Movie.class.getSimpleName()));
         Log.d("DescriptionActivity", String.format("Showing details for '%s'",movie.getTitle()));
 
+        // Get movie id for trailer
+        id = movie.getId();
         // Set the title and overview
         tvTitle.setText(movie.getTitle());
         tvOverview.setText(movie.getOverview());

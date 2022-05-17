@@ -23,7 +23,7 @@ import okhttp3.Headers;
 
 public class MovieTrailerActivity extends YouTubeBaseActivity {
 
-    public static final String API_KEY = "AIzaSyBTCsgxjR7dr5n9a_RJYj1aBvyD--Wb-FI";
+    public static final String API_KEY = "69c799db2acab2a0543629cffd65b116";
     String trailerKey;
     ActivityMovieTrailerBinding binding;
 
