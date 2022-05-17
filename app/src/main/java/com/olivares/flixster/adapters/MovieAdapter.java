@@ -3,6 +3,7 @@ package com.olivares.flixster.adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,10 +68,11 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
             super(itemView);
             tvTitle = itemView.findViewById(R.id.tvTitle);
             tvOverview = itemView.findViewById(R.id.tvOverview);
+            // Allow wrapped text to be scrollable
+            //tvOverview.setMovementMethod(new ScrollingMovementMethod());
             ivPoster = itemView.findViewById(R.id.ivPoster);
             // Add this as the itemView's OnClickListener
             itemView.setOnClickListener(this);
-
         }
 
         public void bind(Movie movie) {

@@ -7,11 +7,13 @@
     <!-- API 30+ requires that the YT service be started manually from the manifest
         because Google decided to limit background services to not waste resources
         for users -->
+    <!--
     <queries>
         <intent>
             <action android:name="com.google.android.youtube.api.service.START" />
         </intent>
     </queries>
+    -->
 
     <application
         android:allowBackup="true"

@@ -21,20 +21,17 @@ public class Movie {
     String backdropPath;
     Double voteAverage;
 
-
     public Double getVoteAverage() {
         return voteAverage;
     }
 
     public Movie(JSONObject jsonObject) throws JSONException {
-
         id = jsonObject.getString("id");
         posterPath = jsonObject.getString("poster_path");
         title = jsonObject.getString("title");
         overview = jsonObject.getString("overview");
         backdropPath = jsonObject.getString("backdrop_path");
         voteAverage = jsonObject.getDouble("vote_average");
-
     }
 
     public static List<Movie> fromJsonArray(JSONArray movieJsonArray) throws JSONException {
